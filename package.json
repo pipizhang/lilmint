@@ -1,7 +1,7 @@
 {
   "name": "lilmint",
   "version": "0.1.0",
-  "description": "CLI CMS System",
+  "description": "CLI CMS Application",
   "author": "PeterZ",
   "license": "MIT",
   "main": "index.js",
