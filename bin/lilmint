@@ -1,22 +1,16 @@
 #!/usr/bin/env node
 // vim:syntax=javascript
 
+require('dotenv').config({path: __dirname+'/../.env'});
+
 const prog = require('caporal');
+const JKSiteCommand = require('../lib/commands/jksite');
+
 prog
-  .version('1.0.0')
-  // you specify arguments using .argument()
-  // 'app' is required, 'env' is optional
-  .command('deploy', 'Deploy an application')
-  .argument('<app>', 'App to deploy', /^myapp|their-app$/)
-  .argument('[env]', 'Environment to deploy on', /^dev|staging|production$/, 'local')
-  // you specify options using .option()
-  // if --tail is passed, its value is required
-  .option('--tail <lines>', 'Tail <lines> lines of logs after deploy', prog.INT)
-  .action(function(args, options, logger) {
-    // args and options are objects
-    // args = {"app": "myapp", "env": "production"}
-    // options = {"tail" : 100}
-  });
+  .version('0.1.0')
+  .command('jksite', 'Run jksite commands')
+  .argument('[action]', 'Run action', /^[a-z]+$/, 'default')
+  .action(JKSiteCommand.process)
 
 prog.parse(process.argv);
 
