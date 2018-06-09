@@ -9,7 +9,8 @@ const JKSiteCommand = require('../lib/commands/jksite');
 prog
   .version('0.1.0')
   .command('jksite', 'Run jksite commands')
-  .argument('[action]', 'Run action', /^[a-z]+$/, 'default')
+  .argument('[action]', 'Run action', /^[a-zA-Z]+$/, 'default')
+  .option('--search <key>', 'Keyword')
   .action(JKSiteCommand.process)
 
 prog.parse(process.argv);
