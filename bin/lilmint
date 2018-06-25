@@ -11,7 +11,7 @@ prog
   .command('jksite', 'Run jksite commands')
   .argument('[action]', 'Run action', /^[a-zA-Z]+$/, 'default')
   .option('--search <key>', 'Keyword')
-  .action(JKSiteCommand.process)
+  .action(JKSiteCommand.process);
 
 prog.parse(process.argv);
 
