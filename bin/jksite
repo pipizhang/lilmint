@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+// vim:syntax=javascript
+
+require('dotenv').config({path: __dirname+'/../.env'});
+
+const prog = require('caporal');
+const JKSiteCommand = require('../lib/commands/jksite');
+const Commander = require('../lib/misc/commander');
+
+prog
+  .version('0.1.0')
+
+  .command('esSearch', 'Search Article from ElasticSearch')
+  .argument('<keyword>', 'keyword')
+  .action(Commander.call('jksite::esSearch'))
+
+  .command('esSetup', 'Initialize ElasticSearch indexs')
+  .action(Commander.call('jksite::esSetup'))
+
+  .command('esIndex', 'Index article')
+  .action(Commander.call('jksite::esIndex'))
+
+  .command('esIndexClean', 'Remove all index')
+  .action(Commander.call('jksite::esIndexClean'))
+
+  .command('fetchRandom', 'Show a random article')
+  .argument('<amount>', 'keyword', prog.INT, 1)
+  .action(Commander.call('jksite::fetchRandom'))
+
+  .command('test', 'Run test action')
+  .action(Commander.call('jksite::test'))
+
+prog.parse(process.argv);
+
