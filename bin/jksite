@@ -4,7 +4,6 @@
 require('dotenv').config({path: __dirname+'/../.env'});
 
 const prog = require('caporal');
-const JKSiteCommand = require('../lib/commands/jksite');
 const Commander = require('../lib/misc/commander');
 
 prog
