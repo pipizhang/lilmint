@@ -24,7 +24,8 @@
     "nodejieba": "^2.2.6",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
-    "sanitize-html": "^1.18.2"
+    "sanitize-html": "^1.18.2",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^5.0.0",
