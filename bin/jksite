@@ -32,5 +32,8 @@ prog
   .command('test', 'Run test action')
   .action(Commander.call('jksite::test'))
 
+  .command('publish', 'Publish articles to remote')
+  .action(Commander.call('jksite::publish'))
+
 prog.parse(process.argv);
 
