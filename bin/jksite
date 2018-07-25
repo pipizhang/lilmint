@@ -22,8 +22,11 @@ prog
   .command('esIndexClean', 'Remove all index')
   .action(Commander.call('jksite::esIndexClean'))
 
+  .command('showTags', 'Show all tags')
+  .action(Commander.call('jksite::showTags'))
+
   .command('fetchRandom', 'Show a random article')
-  .argument('<amount>', 'keyword', prog.INT, 1)
+  .argument('[amount]', 'keyword', prog.INT, 1)
   .action(Commander.call('jksite::fetchRandom'))
 
   .command('test', 'Run test action')
